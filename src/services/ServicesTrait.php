@@ -29,7 +29,7 @@ trait ServicesTrait
      */
     public function __construct($id, $parent = null, array $config = [])
     {
-        // Merge in the passed config, so it our config can be overridden by Plugins::pluginConfigs['vite']
+        // Merge in the passed config, so it our config can be overridden by Plugins::pluginConfigs['minify']
         // ref: https://github.com/craftcms/cms/issues/1989
         $config = ArrayHelper::merge([
             'components' => [
