@@ -9,7 +9,6 @@
 
 namespace nystudio107\minify\services;
 
-use craft\helpers\ArrayHelper;
 use yii\base\InvalidConfigException;
 
 /**
@@ -21,24 +20,23 @@ use yii\base\InvalidConfigException;
  */
 trait ServicesTrait
 {
-    // Public Methods
+    // Public Static Methods
     // =========================================================================
 
     /**
      * @inheritdoc
      */
-    public function __construct($id, $parent = null, array $config = [])
+    public static function config(): array
     {
-        // Merge in the passed config, so it our config can be overridden by Plugins::pluginConfigs['vite']
-        // ref: https://github.com/craftcms/cms/issues/1989
-        $config = ArrayHelper::merge([
+        return [
             'components' => [
                 'minify' => MinifyService::class,
             ],
-        ], $config);
-
-        parent::__construct($id, $parent, $config);
+        ];
     }
+
+    // Public Methods
+    // =========================================================================
 
     /**
      * Returns the helper service

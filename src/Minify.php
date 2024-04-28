@@ -36,9 +36,9 @@ class Minify extends Plugin
     // =========================================================================
 
     /**
-     * @var Minify
+     * @var ?Minify
      */
-    public static Minify $plugin;
+    public static ?Minify $plugin = null;
 
     // Public Properties
     // =========================================================================
